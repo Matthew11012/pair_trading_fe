@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 // import ModelCreator from './components/ModelCreator';
 // import ModelViewer from './components/ModelViewer';
 import Header from './components/Header';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import './globals.css';
 
 export default function App() {
@@ -39,9 +39,9 @@ export default function App() {
           <Route path="/create" element={<ModelCreator />} />
           <Route path="/model/:modelId" element={<ModelViewer />} />
         </Routes>
-      </main>
+      </main>*/
       
-      <Footer /> */}
+      <Footer /> }
     </div>
     
   );
