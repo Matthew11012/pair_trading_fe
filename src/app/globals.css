@@ -24,3 +24,81 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+:root {
+  --primary-color: #4353ff;
+  --secondary-color: #32a852;
+  --danger-color: #e74c3c;
+  --light-gray: #f5f5f5;
+  --mid-gray: #e0e0e0;
+  --dark-gray: #333333;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: var(--shadow);
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+.api-status {
+  font-size: 0.9rem;
+}
+
+.api-status .connected {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.api-status .disconnected {
+  color: var(--danger-color);
+  font-weight: bold;
+}
