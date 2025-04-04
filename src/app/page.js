@@ -1,8 +1,9 @@
 // src/App.jsx
 "use client";
 import React, { useState, useEffect } from 'react';
+// import Link from "next/link";
 // import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-// import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard';
 // import ModelCreator from './components/ModelCreator';
 // import ModelViewer from './components/ModelViewer';
 import Header from './components/Header';
@@ -33,15 +34,12 @@ export default function App() {
     <div className="app">
       <Header isApiConnected={isApiConnected} />
       
-      {/* <main className="content">
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/create" element={<ModelCreator />} />
-          <Route path="/model/:modelId" element={<ModelViewer />} />
-        </Routes>
-      </main>*/
+       <main className="content">
+        <Dashboard />
+          
+       </main>
       
-      <Footer /> }
+      <Footer /> 
     </div>
     
   );
