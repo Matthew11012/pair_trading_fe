@@ -242,3 +242,76 @@ footer {
   margin-top: 2rem;
 }
 
+/* ModelCreator */
+.model-creator {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.model-creator h2 {
+  margin-bottom: 1.5rem;
+}
+
+.error-message {
+  background-color: #fadbd8;
+  color: var(--danger-color);
+  padding: 0.8rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-end;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.8rem;
+  border: 1px solid var(--mid-gray);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group small {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.form-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.correlation-result {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.correlation-result.valid {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.correlation-result.invalid {
+  background-color: #f8d7da;
+  color: #721c24;
+}

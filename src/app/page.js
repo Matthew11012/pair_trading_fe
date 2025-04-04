@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 // import Link from "next/link";
 // import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
-// import ModelCreator from './components/ModelCreator';
+import ModelCreator from './components/ModelCreator';
 // import ModelViewer from './components/ModelViewer';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -36,7 +36,7 @@ export default function App() {
       
        <main className="content">
         <Dashboard />
-          
+        
        </main>
       
       <Footer /> 
