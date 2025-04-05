@@ -8,17 +8,41 @@ export default function Dashboard() {
   
   // In a real application, you would fetch the list of models from the API
   // For this demo, we'll simulate with localStorage
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   try {
+  //     const savedModels = JSON.parse(localStorage.getItem('pairTradingModels')) || [];
+  //     setModels(savedModels);
+  //     console.log(models)
+  //   } catch (error) {
+  //     console.error('Error loading models:', error);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // }, []);
+
   useEffect(() => {
     setIsLoading(true);
-    try {
-      const savedModels = JSON.parse(localStorage.getItem('pairTradingModels')) || [];
-      setModels(savedModels);
-    } catch (error) {
-      console.error('Error loading models:', error);
-    } finally {
-      setIsLoading(false);
+    async function fetchModels() {
+      try {
+        const response = await fetch('http://localhost:5000/api/get_all_models');
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+          setModels(result.models);
+        } else {
+          console.error('Failed to fetch models:', result.message);
+        }
+      } catch (error) {
+        console.error('Error loading models:', error);
+      } finally {
+        setIsLoading(false);
+      }
     }
+  
+    fetchModels();
   }, []);
+  
   
   const deleteModel = async (modelId) => {
     if (window.confirm('Are you sure you want to delete this model?')) {
