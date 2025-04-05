@@ -13,21 +13,21 @@ import './globals.css';
 export default function App() {
   const [isApiConnected, setIsApiConnected] = useState(false);
   
-  // // Check API connection on component mount
-  // useEffect(() => {
-  //   async function checkApiConnection() {
-  //     try {
-  //       const response = await fetch('http://localhost:5000/api/test_connection');
-  //       const data = await response.json();
-  //       setIsApiConnected(data.status === 'success');
-  //     } catch (error) {
-  //       console.error('API connection error:', error);
-  //       setIsApiConnected(false);
-  //     }
-  //   }
+  // Check API connection on component mount
+  useEffect(() => {
+    async function checkApiConnection() {
+      try {
+        const response = await fetch('http://localhost:5000/api/test_connection');
+        const data = await response.json();
+        setIsApiConnected(data.status === 'success');
+      } catch (error) {
+        console.error('API connection error:', error);
+        setIsApiConnected(false);
+      }
+    }
     
-  //   checkApiConnection();
-  // }, []);
+    checkApiConnection();
+  }, []);
   
   return (
     

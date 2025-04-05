@@ -1,14 +1,15 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function ModelCreator({ availableTickers = [] }) {
+export default function ModelCreator() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [correlation, setCorrelation] = useState(null);
+  const [availableTickers, setAvailableTickers] = useState([]);
   
   const [formData, setFormData] = useState({
     ticker1: '',
@@ -32,6 +33,22 @@ export default function ModelCreator({ availableTickers = [] }) {
       start_date: date
     });
   };
+
+  // Fetch available tickers on component mount
+  useEffect(() => {
+    async function fetchTickers() {
+      try {
+        const response = await fetch('http://localhost:5000/api/available_tickers');
+        const data = await response.json();
+        setAvailableTickers(data);
+      } catch (error) {
+        console.error('Error fetching tickers:', error);
+        setError('Failed to load available tickers. Please try again later.');
+      }
+    }
+    
+    fetchTickers();
+  }, []);
   
   const validatePair = async () => {
     if (!formData.ticker1 || !formData.ticker2) {
